@@ -11,9 +11,11 @@
 <script>
 import Question from 'components/Question'
 export default {
+  components: {
+    Question
+  },
   data() {
     return {
-      activeIndex: 0,
       questions: [
         {
           idx: 0,
@@ -29,9 +31,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Question
   }
 }
 </script>
