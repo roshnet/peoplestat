@@ -10,6 +10,7 @@
     </q-card>
     <div class="q-pa-md">
       <q-slider
+        @input="setScoreForQuestion(q)"
         v-model="q.score"
         :min="0"
         :max="10"
@@ -32,6 +33,11 @@ export default {
     q: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    setScoreForQuestion(q) {
+      this.$store.commit('setScore', q)
     }
   }
 }

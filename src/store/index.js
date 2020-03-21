@@ -6,14 +6,11 @@ Vue.prototype.$store = vuex
 
 export default new vuex.Store({
   state: {
-    title: 'My shitty title'
+    scores: []
   },
   mutations: {
-    setTitle(state, val) {
-        state.title = val
+    setScore(state, qObject) {
+        state.scores[qObject.idx] = qObject.score
     }
-  },
-  actions: {
-
   }
 })
