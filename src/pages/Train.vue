@@ -1,9 +1,25 @@
 <template>
   <q-page class="flex flex-center">    
+    <q-btn
+      v-show="activeIndex > 0"
+      @click="navigate('prev')"
+      icon="chevron_left"
+      size="sm"
+      color="secondary"
+      glossy
+      round
+    />
     <question
-      v-for="question in questions"
-      :key="question.idx"
-      :q="question"
+      :q="questions[activeIndex]"
+    />
+    <q-btn
+      v-show="activeIndex < questions.length - 1"
+      @click="navigate('next')"
+      icon="chevron_right"
+      size="sm"
+      color="secondary"
+      glossy
+      round
     />
   </q-page>
 </template>
@@ -16,20 +32,36 @@ export default {
   },
   data() {
     return {
+      activeIndex: 0,
       questions: [
         {
           idx: 0,
-          body: 'How much would you rate this person for sense of humour?'
+          body: 'How much would you rate this person for sense of humour?',
+          score: 5
         },
         {
           idx: 1,
-          body: 'How much do you think should this person be rated for anger?'
+          body: 'How much do you think should this person be rated for anger?',
+          score: 5
         },
         {
           idx: 2,
-          body: 'What would you rate this person for mental focus?'
+          body: 'What would you rate this person for mental focus?',
+          score: 5
         }
       ]
+    }
+  },
+  methods: {
+    navigate(action) {
+      // v-show takes care of end values.
+      // Skip logic in method to keep it simple.
+      if (action == 'next') {
+          this.activeIndex += 1
+      }
+      if (action == 'prev') {
+          this.activeIndex -= 1
+      }
     }
   }
 }

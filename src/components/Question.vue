@@ -10,7 +10,7 @@
     </q-card>
     <div class="q-pa-md">
       <q-slider
-        v-model="value"
+        v-model="q.score"
         :min="0"
         :max="10"
         :step="1"
@@ -19,27 +19,17 @@
       />
     </div>
     <h2 class="text-h4 text-center q-ml-auto q-mr-auto">
-      <span class="box">{{ value }}</span>
+      <span class="box">{{ q.score }}</span>
       / 10
     </h2>
-    <hr class="q-my-xl" />
   </section>
 </template>
 
 <script>
 export default {
   name: 'SingleQuestion',
-  data() {
-    return {
-      value: this.initialValue    // using as data prop; mutation intended
-    }
-  },
   props: {
-    initialValue: {
-      type: Number,
-      default: 5
-    },
-    q: {                         // to be used directly; no mutation intended
+    q: {
       type: Object,
       required: true
     }
