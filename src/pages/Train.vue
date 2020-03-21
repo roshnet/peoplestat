@@ -54,14 +54,7 @@ export default {
   },
   methods: {
     navigate(action) {
-      // v-show takes care of end values.
-      // Skip logic in method to keep it simple.
-      if (action == 'next') {
-          this.activeIndex += 1
-      }
-      if (action == 'prev') {
-          this.activeIndex -= 1
-      }
+      (action == 'next') ? this.activeIndex += 1 : this.activeIndex -= 1
     }
   }
 }
