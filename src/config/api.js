@@ -3,5 +3,5 @@ const api = {
 }
 
 export const endpoints = {
-  train: api.hostURL + '/api/v1/train'
+  train: api.hostURL + '/api/v1/record'
 }
