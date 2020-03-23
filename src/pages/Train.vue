@@ -31,6 +31,47 @@
       color="primary"
       glossy
     />
+
+    <q-dialog v-model="responseError">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6 text-warning">
+            <q-icon name="warning" />
+            Something's not right
+          </div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          There is a network issue with the app.<br />
+        </q-card-section>
+        <q-card-actions align="right">
+          <q-btn flat label="OK" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <q-dialog v-model="responseSuccess">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6 text-primary">
+            <q-icon name="sentiment_satisfied_alt" />
+            Thanks for your response!
+          </div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          You can also start again.<br />
+          More responses -> better analysis.
+        </q-card-section>
+        <q-card-actions align="right">
+          <q-btn
+            @click="backToHome"
+            label="OK"
+            color="primary"
+            flat
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 
@@ -45,6 +86,8 @@ export default {
   data() {
     return {
       activeIndex: 0,
+      responseSuccess: false,
+      responseError: false,
       questions: [
         {
           idx: 0,
@@ -83,11 +126,14 @@ export default {
               .post(endpoints.train, this.$store.state.scores)
               .then((resp) => {
                 console.log('RESPONSE \n', resp)
+                this.responseSuccess = true    
               })
               .catch((err) => {
+                this.responseError = true
                 console.warn('ERROR ', err)
               })
-    }
+    },
+    backToHome() { this.$router.push('/') }
   }
 }
 </script>
