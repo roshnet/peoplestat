@@ -1,25 +1,52 @@
 <template>
   <q-page class="flex flex-center text-center">
-    <h4>
+    <div class="q-mx-lg">
+      <p class="text-subtitle1 text-primary">
+        Think of a person you've interacted with.
+        Answer the questions that follow.
+      </p>
+      <q-btn
+        @click="showHint = true"
+        size="15px"
+        color="positive"
+        icon="lightbulb"
+        round
+      />
+      &nbsp;
       <q-btn
         to="/train"
         size="15px"
         color="primary"
         icon-right="skip_next"
-        label="Get Started"
+        label="Start"
       />
-    </h4>
-    <p class="text-grey-5 text-subtitle2 q-mx-md fixed-bottom-right">
-      Make sure to read
-      <q-btn
-        dense
-        color="grey"
-        size="md"
-        to="/help"
-        label="the guide"
-        no-caps
-      />
-      before continuing.
-    </p>
+      <q-dialog v-model="showHint">
+        <q-card>
+          <q-card-section>
+            <div class="text-h6">
+              <q-icon name="lightbulb" />
+              How to use the app
+            </div>
+          </q-card-section>
+          <q-card-section class="q-pt-none">
+            Scores you assign are supposed to be your best guess, regardless of
+            any dedicated investigation.
+          </q-card-section>
+          <q-card-actions align="right">
+            <q-btn flat label="Got it!" color="primary" v-close-popup />
+          </q-card-actions>
+        </q-card>
+      </q-dialog>
+    </div>
   </q-page>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showHint: false
+    }
+  }
+}
+</script>
