@@ -1,5 +1,5 @@
 <template>
-  <section class="text-center">
+  <section class="text-center content">
     <q-card class="q-px-md q-mx-lg q-mt-lg">
       <q-card-section>
         <div class="text-h6 text-weight-light">
@@ -44,9 +44,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 250px
+.content
+  width: 550px
 
 .box
   max-width: 200px
