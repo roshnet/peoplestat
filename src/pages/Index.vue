@@ -34,8 +34,8 @@
             <p class="text-subtitle2 text-primary q-mt-md">
               <strong>Privacy</strong>
             </p>
-            No labelled data is collected by this app. Whatever you think, stays
-            in your brain. All scores are therefore absolutely anonymous.
+            No identifiable data is collected by this app. Whomever you think,
+            stays in your brain. All scores are therefore absolutely anonymous.
           </q-card-section>
           <q-card-actions align="right">
             <q-btn flat label="Got it!" color="primary" v-close-popup />
