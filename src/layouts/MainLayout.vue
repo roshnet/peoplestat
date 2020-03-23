@@ -12,7 +12,7 @@
         />
       </q-toolbar>
       <div class="q-px-lg q-pt-md q-mb-md">
-        <div class="text-h3">Peoplestat</div>
+        <div class="text-h4">Peoplestat</div>
         <div class="text-subtitle2 text-weight-regular q-mt-sm">
           Behaviour prediction via anonymous feedbacks
         </div>
@@ -63,8 +63,8 @@ export default {
       leftDrawerOpen: false,
       drawerLinks: [
         {
-          title: 'Dashboard',
-          caption: 'Your personal dashboard',
+          title: 'Start / Resume',
+          caption: 'Start assiging scores',
           icon: 'dashboard',
           link: '/'
         },
