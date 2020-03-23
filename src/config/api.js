@@ -1,5 +1,5 @@
 const api = {
-  hostURL: 'http://localhost:8000'
+  hostURL: 'https://peoplestatapi.pythonanywhere.com'
 }
 
 export const endpoints = {
