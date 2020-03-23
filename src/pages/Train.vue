@@ -4,8 +4,8 @@
       v-show="activeIndex > 0"
       @click="navigate('prev')"
       icon="chevron_left"
-      size="sm"
-      color="secondary"
+      size="md"
+      color="blue"
       glossy
       round
     />
@@ -16,8 +16,8 @@
       v-show="activeIndex < questions.length - 1"
       @click="navigate('next')"
       icon="chevron_right"
-      size="sm"
-      color="secondary"
+      size="md"
+      color="blue"
       glossy
       round
     />
@@ -53,12 +53,22 @@ export default {
         },
         {
           idx: 1,
-          body: 'How much do you think should this person be rated for anger?',
+          body: 'How often do you think does this person get angry?',
           score: 5
         },
         {
           idx: 2,
-          body: 'What would you rate this person for mental focus?',
+          body: 'How well can this person focus mentally?',
+          score: 5
+        },
+        {
+          idx: 3,
+          body: 'How many people does this person hang out with (average)?',
+          score: 5
+        },
+        {
+          idx: 4,
+          body: 'How gullible/naive is this person?',
           score: 5
         }
       ]
